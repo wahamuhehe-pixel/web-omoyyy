@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spesial Buat Kesayanganku ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        :root {
+            --bg-color: #fff5f7;
+            --main-color: #ff8da1;
+            --dark-color: #d94b68;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: #4a4a4a;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           WELCOME SCREEN
+        ========================= */
+
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                135deg,
+                #fff0f3 0%,
+                #ffe3e8 100%
+            );
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+
+            transition:
+                opacity 0.8s ease,
+                visibility 0.8s;
+        }
+
+        .welcome-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+
+        .welcome-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 10px 30px rgba(255, 141, 161, 0.2);
+
+            max-width: 90%;
+            width: 340px;
+
+            border: 3px solid var(--main-color);
+        }
+
+
+        .welcome-gif {
+            width: 150px;
+            height: 150px;
+
+            margin-bottom: 20px;
+
+            object-fit: contain;
+        }
+
+
+        .lucu {
+            font-family: 'Fredoka', sans-serif;
+
+            color: var(--dark-color);
+
+            font-size: 20px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .btn-buka {
+            font-family: 'Fredoka', sans-serif;
+
+            background-color: var(--main-color);
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 35px;
+
+            font-size: 18px;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 15px rgba(255, 141, 161, 0.4);
+        }
+
+
+        /* =========================
+           QUIZ
+        ========================= */
+
+        .quiz-container {
+            max-width: 400px;
+
+            margin: 80px auto;
+
+            padding: 25px;
+
+            background: white;
+
+            border-radius: 24px;
+
+            border: 3px solid var(--main-color);
+
+            box-shadow:
+                0 10px 30px rgba(255, 141, 161, 0.15);
+        }
+
+
+        .quiz-container.hidden {
+            display: none !important;
+        }
+
+
+        .quiz-gif {
+            width: 130px;
+            height: 130px;
+
+            margin-bottom: 15px;
+
+            object-fit: contain;
+        }
+
+
+        .quiz-text {
+            font-family: 'Fredoka', sans-serif;
+
+            font-size: 19px;
+
+            color: var(--dark-color);
+
+            margin-bottom: 25px;
+        }
+
+
+        .btn-group {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+
+        .btn-choice {
+            font-family: 'Fredoka', sans-serif;
+
+            padding: 13px 20px;
+
+            font-size: 16px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .btn-choice:hover {
+            transform: scale(1.03);
+        }
+
+
+        .btn-yes {
+            background-color: var(--main-color);
+
+            color: white;
+        }
+
+
+        .btn-option {
+            background-color: #ffe3e8;
+
+            color: var(--dark-color);
+
+            border: 2px solid var(--main-color);
+        }
+
+
+        /* =========================
+           KONTEN UTAMA
+        ========================= */
+
+        .main-content {
+            display: none;
+        }
+
+
+        .main-content.visible {
+            display: block;
+        }
+
+
+        .container {
+            max-width: 500px;
+
+            margin: 0 auto;
+
+            padding: 20px;
+        }
+
+
+        .judul-utama {
+            font-family: 'Fredoka', sans-serif;
+
+            color: var(--dark-color);
+
+            font-size: 32px;
+
+            margin-top: 30px;
+        }
+
+
+        .decor-nailong {
+            width: 120px;
+
+            margin: 20px auto 0 auto;
+
+            animation:
+                bounce 2s infinite alternate;
+        }
+
+
+        @keyframes bounce {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* =========================
+           SURAT
+        ========================= */
+
+        .surat-box {
+            background: white;
+
+            padding: 30px 20px;
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.05);
+
+            border: 3px dashed var(--main-color);
+
+            text-align: left;
+
+            margin: 30px 0;
+
+            line-height: 1.8;
+        }
+
+
+        .surat-box h2 {
+            font-family: 'Fredoka', sans-serif;
+
+            color: var(--dark-color);
+
+            margin-bottom: 20px;
+
+            text-align: center;
+        }
+
+
+        .long-text {
+            white-space: pre-line;
+
+            font-size: 14px;
+
+            color: #555;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           TOMBOL SELANJUTNYA
+        ========================= */
+
+        .btn-next {
+            display: block;
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: var(--main-color);
+
+            color: white;
+
+            font-family: 'Fredoka', sans-serif;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 15px rgba(255,141,161,0.3);
+        }
+
+
+        /* =========================
+           FOTO
+        ========================= */
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 25px;
+
+            margin: 30px 0;
+        }
+
+
+        .photo-card {
+            background: white;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.06);
+
+            border: 1px solid #ffe3e8;
+        }
+
+
+        .photo-card img {
+            width: 100%;
+
+            height: 320px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+        }
+
+
+        .photo-caption {
+            font-family: 'Fredoka', sans-serif;
+
+            margin-top: 12px;
+
+            font-size: 15px;
+
+            color: var(--dark-color);
+        }
+
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-card {
+            background: white;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.06);
+
+            margin-top: 25px;
+        }
+
+
+        .video-card video {
+            width: 100%;
+
+            border-radius: 8px;
+
+            display: block;
+        }
+
+
+        /* =========================
+           MUSIK
+        ========================= */
+
+        .audio-player {
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            background: white;
+
+            padding: 8px 16px;
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.1);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            z-index: 999;
+
+            border: 2px solid var(--main-color);
+        }
+
+
+        .btn-mute {
+            background: var(--main-color);
+
+            color: white;
+
+            border: none;
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MUSIK
+    ========================= -->
+
+    <audio id="musikLatar" loop>
+
+        <source
+            src="lagu.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <div
+        class="welcome-screen"
+        id="welcomeScreen"
+    >
+
+        <div class="welcome-card">
+
+            <img
+                class="welcome-gif"
+                src="nailong.gif"
+                alt="Nailong"
+            >
+
+            <h1 class="lucu">
+                Halo Cantik! ❤️
+                <br>
+                Ada sesuatu buat kamu...
+            </h1>
+
+            <button
+                class="btn-buka"
+                onclick="bukaWeb()"
+            >
+                Mulai ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TOMBOL MUSIK
+    ========================= -->
+
+    <div class="audio-player">
+
+        <span
+            style="
+                font-size:11px;
+                font-weight:bold;
+                color:var(--dark-color);
+            "
+        >
+            🎵 Musik
+        </span>
+
+        <button
+            class="btn-mute"
+            id="btnMute"
+            onclick="toggleMusik()"
+        >
+            🔊
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         PERTANYAAN 1
+    ========================= -->
+
+    <div
+        class="quiz-container"
+        id="quiz1"
+    >
+
+        <img
+            class="quiz-gif"
+            src="nailong.gif"
+            alt="Nailong"
+        >
+
+        <div class="quiz-text">
+
+            Kamu sayang aku ga? 🥺❤️
+
+        </div>
+
+
+        <div class="btn-group">
+
+            <button
+                class="btn-choice btn-option"
+                onclick="nextQuiz(1)"
+            >
+                Sayang 😒
+            </button>
+
+
+            <button
+                class="btn-choice btn-yes"
+                onclick="nextQuiz(1)"
+            >
+                Sayang banget 💋
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PERTANYAAN 2
+    ========================= -->
+
+    <div
+        class="quiz-container hidden"
+        id="quiz2"
+    >
+
+        <img
+            class="quiz-gif"
+            src="nailong.gif"
+            alt="Nailong"
+        >
+
+        <div class="quiz-text">
+
+            Kalo aku selalu jail,
+            kamu ilfeel ga? 🤭
+
+        </div>
+
+
+        <div class="btn-group">
+
+            <button
+                class="btn-choice btn-option"
+                onclick="nextQuiz(2)"
+            >
+                Ilfeel 🤢 banget
+            </button>
+
+
+            <button
+                class="btn-choice btn-yes"
+                onclick="nextQuiz(2)"
+            >
+                Nggak sayangku 🖕🏼
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PERTANYAAN 3
+    ========================= -->
+
+    <div
+        class="quiz-container hidden"
+        id="quiz3"
+    >
+
+        <img
+            class="quiz-gif"
+            src="nailong.gif"
+            alt="Nailong"
+        >
+
+        <div class="quiz-text">
+
+            Hal apa yang buat kamu selalu mikir
+            kalo kamu bahagia sama aku? 🥺❤️
+
+        </div>
+
+
+        <div class="btn-group">
+
+            <button
+                class="btn-choice btn-option"
+                onclick="selesaiKuis()"
+            >
+                Gw ganteng 😊
+            </button>
+
+
+            <button
+                class="btn-choice btn-yes"
+                onclick="selesaiKuis()"
+            >
+                Gw ganteng bet bjir 😜
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         HALAMAN UTAMA
+    ========================= -->
+
+    <div
+        class="main-content"
+        id="kontenUtama"
+    >
+
+        <div class="container">
+
+
+            <!-- =========================
+                 HEADER
+            ========================= -->
+
+            <header>
+
+                <h1 class="judul-utama">
+
+                    Happy Birthday,
+                    Sayang! 🎂🎉
+
+                </h1>
+
+
+                <img
+                    class="decor-nailong"
+                    src="nailong.gif"
+                    alt="Nailong"
+                >
+
+
+                <p
+                    style="
+                        margin-top:10px;
+                        font-size:15px;
+                    "
+                >
+
+                    Selamat bertambah usia
+                    untuk orang favoritku di dunia! 💛
+
+                </p>
+
+            </header>
+
+
+            <!-- =========================
+                 SURAT PANJANG
+            ========================= -->
+
+            <div class="surat-box">
+
+                <h2>
+
+                    💌 Surat Buat Kamu
+
+                </h2>
+
+
+                <div class="long-text">
+
+AKUUUUU SAYANGGGGGGGG BANGETTTTTT AYANGGGGGGGG SAMAAAAAA AYANGGGGGGGGG MELEBIHIIII SIYAPAAAAAPUNNNN EUMMMMM AKUUUUU JANJIIIII SAMAAAA AYANGGGGGGGG ALHAMDULILLAH AKUUUU SYUDAHHHHH MENCAPAI SEMUAAAA YANGGG AKUUUUU TUJUUUUU AKUUUU INGINNNNN AYANGGGGGGGG OYANGGG PERTAMAAAAAA YANGGGG NGERASAINNNN SEMUWANYAAAAAA, AKUUUUU CINTAAAAAAA BANGETTTTTT SAMAAAAAA AYANGGGGGGGGG DARIIIII DULUUUUU SAMPAIIII SEKARANG WALAUPUN PWASTIIII AYANGGGGGGGG MERASAKANNN PERUBAHAN DI DIRIIII AKUUUUU TAPIIIII AKUUUUU TUHHHH PUNYAAAA TUJUANN YANGGG SAMAAAA DARIIII DULUUUUU DIMANAAAAA AYANGGGGGG BAHAGIAAAAA WALAUPUN CARAAAA AKUUUU JUGAAAAA SALAHHHHH, EUMMMMMN AKUUUUUU PENGENNNNN BANGETTT PELUKKKKKK AYANGGGGGGGG, NGGAK NYANGKAAAA YAHHHHH SAYANGKUUUU KITAAAAA BISAAAAA BERTAHAN LAMAAAA AKUUUUU YAKINNNNN BISAAAAA UBAHHHH NASIBBB KEHIDUPAN KITAAAAA JADIIIII PALINGGGG TERBAIKKK.
+
+HIHIHIHIHIIIII KADANGGGG AKUUUUU NANGISSS KARENAAAA BAHAGIAAAA KALOOOO INGETTTT TAHUNNNN 2024 MWEHEHEHEHEHEHE 😁🤭 TAPIIIII CEKALANGGGG EHHHH KITAAAAA SYUDAHHHHH JADIIII PACARRRR, AKUUUUU CINTAAAAAAA BANGETTTTTT AYANGGGGGGGG POKOKNYAAA KALOOOO LIYATYTTT AYANGGGGGGGG SENYUMMMM DUNIAAAA AKUUUU YANGCUNGGG BAHAGIAAAA PADAHALLLL LAGIIII BANYAKKKK PIKIRANNNNN.
+
+I LOVE YOU IN EVERY UNIVERSE SAYANGGGKUUUU 🤍🤍🤍
+
+                </div>
+
+
+                <!-- TOMBOL LANJUT -->
+                <button
+                    class="btn-next"
+                    onclick="lihatFoto()"
+                >
+
+                    Selanjutnya ❤️
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 FOTO-FOTO
+            ========================= -->
+
+            <div id="bagianFoto">
+
+                <div class="surat-box">
+
+                    <h2>
+
+                        📸 Moment Kamu ❤️
+
+                    </h2>
+
+
+                    <div class="gallery-grid">
+
+
+                        <div class="photo-card">
+
+                            <img
+                                src="foto1.jpg"
+                                alt="Foto Sayang"
+                            >
+
+                            <div class="photo-caption">
+
+                                Foto favoritku ❤️
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="photo-card">
+
+                            <img
+                                src="foto2.jpg"
+                                alt="Foto Sayang"
+                            >
+
+                            <div class="photo-caption">
+
+                                Senyum kamu selalu bikin aku bahagia 🥺
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="photo-card">
+
+                            <img
+                                src="foto3.jpg"
+                                alt="Foto Sayang"
+                            >
+
+                            <div class="photo-caption">
+
+                                Salah satu moment yang aku sayang 💕
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     VIDEO
+                ========================= -->
+
+                <div class="surat-box">
+
+                    <h2>
+
+                        🎥 Video Buat Kamu ❤️
+
+                    </h2>
+
+
+                    <div class="video-card">
+
+                        <video
+                            controls
+                            playsinline
+                        >
+
+                            <source
+                                src="video.mp4"
+                                type="video/mp4"
+                            >
+
+                            Browser kamu tidak mendukung
+                            video.
+
+                        </video>
+
+                    </div>
+
+
+                    <p class="photo-caption">
+
+                        Ini khusus buat kamu, sayang ❤️
+
+                    </p>
+
+                </div>
+
+
+                <!-- PENUTUP -->
+
+                <div
+                    style="
+                        padding:40px 20px;
+                        font-family:'Fredoka',sans-serif;
+                        color:var(--dark-color);
+                        font-size:20px;
+                    "
+                >
+
+                    <p>
+
+                        Happy Birthday,
+                        Sayangku! 🎂❤️
+
+                    </p>
+
+
+                    <p style="margin-top:15px;">
+
+                        I Love You
+                        In Every Universe ♾️❤️
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           ELEMENT
+        ========================= */
+
+        const musik =
+            document.getElementById('musikLatar');
+
+        const btnMute =
+            document.getElementById('btnMute');
+
+        const welcomeScreen =
+            document.getElementById('welcomeScreen');
+
+
+        /* =========================
+           BUKA WEB
+        ========================= */
+
+        function bukaWeb() {
+
+            welcomeScreen.classList.add('hidden');
+
+            musik.play()
+                .then(() => {
+
+                    btnMute.innerText = "🔊";
+
+                })
+                .catch(() => {
+
+                    console.log(
+                        "Browser memblokir pemutaran musik."
+                    );
+
+                });
+
+        }
+
+
+        /* =========================
+           MUSIK ON / OFF
+        ========================= */
+
+        function toggleMusik() {
+
+            if (musik.paused) {
+
+                musik.play();
+
+                btnMute.innerText = "🔊";
+
+            } else {
+
+                musik.pause();
+
+                btnMute.innerText = "🔇";
+
+            }
+
+        }
+
+
+        /* =========================
+           PINDAH PERTANYAAN
+        ========================= */
+
+        function nextQuiz(currentNumber) {
+
+            const current =
+                document.getElementById(
+                    'quiz' + currentNumber
+                );
+
+            const next =
+                document.getElementById(
+                    'quiz' + (currentNumber + 1)
+                );
+
+
+            if (current) {
+
+                current.classList.add('hidden');
+
+            }
+
+
+            if (next) {
+
+                next.classList.remove('hidden');
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+            }
+
+        }
+
+
+        /* =========================
+           SELESAI KUIS
+        ========================= */
+
+        function selesaiKuis() {
+
+            const quiz3 =
+                document.getElementById('quiz3');
+
+            const kontenUtama =
+                document.getElementById('kontenUtama');
+
+
+            quiz3.classList.add('hidden');
+
+            kontenUtama.classList.add('visible');
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }
+
+
+        /* =========================
+           LIHAT FOTO
+        ========================= */
+
+        function lihatFoto() {
+
+            const bagianFoto =
+                document.getElementById('bagianFoto');
+
+
+            bagianFoto.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
